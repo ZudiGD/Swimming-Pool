@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=false" />
-    <title>DAY FOUR!!! AHHHHHH</title>
+    <title>swimming pool
+    </title>
     <script src="./lib/hydra-synth.js"></script>
-    <script src="./lib/gyro.js"></script>
+    <script src="./lib/p5.min.js"></script>
     <styLe>
         html,
         body {
@@ -20,19 +21,39 @@
         canvas {
             display: block;
         }
+
+        .p5Canvas {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
     </styLe>
 </head>
 
 <body>
-    <script type="module">
-        const h = new Hydra()
+    <!-- HY5 needs to be applied in body tag -->
+    <script src="./lib/hy5.js"></script>
 
-        shape(4).scrollX(() => gyro.beta / 4).scrollY(() => gyro.gamma / 4).out()
-        gyro.requestPermissions(document.getElementById('gyro-button'))
-        gyro.show()
+    <script>    
+        // p5 sketch goes here
+        function setup() {
+            createCanvas(windowWidth, windowHeight)
+        }
 
+        function draw() {
+            // clear();
+            ellipse(mouseX, mouseY, 150)
+        }
+
+        P5.init()
+        P5.hide()
+
+        H.pixelDensity(2) // 2x res for retina sharpness
+
+        //  const h = new Hydra() // *** disabled, HY5 creates Hydra instance
+
+        src(s0).modulate(noize()).out()
     </script>
-    <button id="gyro-button">activate gyroscope</button>
 </body>
 
 </html>

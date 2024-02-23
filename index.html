@@ -30,7 +30,8 @@
         }
         #gyro-button {
       position: absolute;
-      top:0;
+      top:0px;
+      z-index: 200;
       width: 100%;
       height: 100%;
       background: none;
@@ -45,8 +46,12 @@
 <body>
     <!-- HY5 needs to be applied in body tag -->
     <script src="./lib/hy5.js"></script>
+    <button id="gyro-button">activate gyroscope</button>
 
     <script>    
+
+gyro.requestPermissions(document.getElementById('gyro-button'))
+
        // code hydra [+/-] p5 or drag + drop .js hydra/p5 file(s) here
 
 var imgCounter = 0
@@ -112,7 +117,6 @@ src(s0)
 
 
     </script>
-       <button id="gyro-button">activate gyroscope</button>
 </body>
 
 </html>

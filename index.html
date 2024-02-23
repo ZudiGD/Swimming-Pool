@@ -76,8 +76,8 @@ function draw() {
 background(255);
 
 //camera(0, 0, (height/2) / tan(PI/6), 0, 0, 0, 0, 1, 0);
-rotateX( -gyro.beta/2);
-rotateY( gyro.gamma/2);
+rotateX( gyro.beta/2);
+rotateY( -gyro.gamma/2);
 
 texture(imgs[imgCounter%imgs.length]);
 ambientLight(200);
